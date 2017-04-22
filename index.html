@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chart Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"> 
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="barchart.js"></script>
+    <script type="text/javascript" src="piechart.js"></script>
+    <script type="text/javascript" src="linechart.js"></script>
+    <script type="text/javascript" src="histogram.js"></script>
+    
+  </head>
+
+  <body>
+    <header>
+      <h1>Chartvisualizer</h1>
+      <div class="flex-container">
+      
+
+      <nav class="nav">
+        
+      <ul>
+        <li><a href="#">Print</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+      </div>
+    </header>
+    
+    <div class="container">
+      <div class="data">
+        <h3> Select Chart </h3>
+        <select  id="charts">
+          <option value="barchart">Bar Chart</option>
+          <option value="piechart">Pie Chart</option>
+          <option value="linechart">Line Chart</option>
+          <option value="histogram">Histogram</option>           
+        </select>
+        <h3>Enter Chart Title</h3>
+        <input type="text" id="title">                
+        
+        <h3>Enter Data Set</h3>
+        
+        <p>No of Items: 
+        <select onChange="itemlist()" id="items">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          </select> 
+               
+        </p>
+        <div id="list"> </div><br>
+        <input type="reset" onclick="Clear()" value="Clear">
+        <input type="button" onclick="plotGraph()" value="PLOT">
+        
+      </div>
+      <div class ="canvas">
+        <canvas id="chart" width="700" height="700">
+          This version of your browser is not supported.
+        </canvas>
+      </div>
+    </div>    
+  </body>
+</html>

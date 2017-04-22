@@ -1,0 +1,113 @@
+
+        body{         
+          font-family: "Helvetica";
+          background-color: #dfdddd;
+          text-align: center;
+        }
+        p{
+          padding: 0;
+          margin: 20px 0 20px 0;
+          font-size: 15px
+        }
+        h1{
+          padding: 10px;
+          color: white;
+        }
+        h3{
+          padding-top: 20px;
+        }
+        header{          
+          margin-top: 0;
+          height: 60px;
+          background-color: #0D47A1;          
+          box-shadow: 0px 5px 5px #777777;          
+        }
+        canvas{
+          width: 100%;
+        }
+        .nav  li{
+          list-style: none;
+          padding: 0;
+}
+        .container{
+          width: 65%;
+          margin: 0 auto;
+          margin-top:60px;
+        }
+        .canvas{
+          width: 60%;
+          box-shadow: 2px 2px 5px #777777;
+          position: relative;
+          margin: 40px 10px;
+          background-color: white;
+          float: right;
+         }
+        .data{
+          width: 25%;
+          text-align: center;
+          background-color: white;
+          position: relative;
+          box-shadow: 2px 2px 5px #777777;
+          margin: 40px 20px;
+          padding: 20px;
+          float: left;
+          overflow-y:scroll;
+          visibility: visible;
+
+        }
+        #items{
+          overflow-y: scroll
+          
+        }
+        input{
+          margin: 10px 25px 0 0;
+          width: 20%;
+          padding: 5px;            
+        }
+        select{
+          padding: 5px;          
+        }
+        option{
+          padding: 2px;          
+          font-size: 10px;
+        }
+        
+        input[type="reset"]{
+          padding: 10px;
+          background-color: #F44336;
+          color: white;
+          width: 70px;
+        }
+        input[value="PLOT"]{
+          padding: 10px;
+          background-color: #4CAF50;
+          color: white;
+          width: 70px;
+        }
+        input[id = "title"]{           
+          padding: 5px;
+          width: 70%;
+          margin: 0 auto;
+          font-size: 15px;          
+        }
+        input[name = "chart"]{    
+          width: 20px;
+        }
+        select {
+    font-size:9pt;
+    letter-spacing:0.07em;
+    color:#808080;
+    background:transparent;
+    border: solid 1px #808080;
+    padding:3px;
+    cursor:pointer;
+}
+       select option { 
+         padding: 1px 5px 1px 3px;}
+       select option[selected]{
+          color:#303030; 
+          }
+       select option:nth-child(even) { 
+         background-color:#e5e5e5;
+          }
+    
