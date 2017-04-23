@@ -1,19 +1,23 @@
 //funtion to get data from inputs and plot chart based on selection
 function plotGraph(){
   var list = document.getElementById("list");  // get div element with id list
-  var node_name = list.getElementsByClassName('name'); //get all the input text with class: name 
-  var node_value = list.getElementsByClassName('values'); //get all the input text with class: value
+  var nodeName = list.getElementsByClassName('name'); //get all the input text with class: name 
+  var nodeValue = list.getElementsByClassName('values'); //get all the input text with class: value
   var dataset = [], scale=[];            
   var sum = 0;
   var title = document.getElementById("title").value; //get graph title text           
   var option = charttype();
-        
-//push all user data to be plotted into array
-  for(var i=0;i<node_name.length;i++){
-    var data ={};
-    data.name = node_name[i].value;
-    data.value = parseInt(node_value[i].value);
 
+
+  for(var i=0;i<nodeName.length;i++){
+    var data ={};
+    if (nodeValue[i].value <= -1){
+      alert("Cannot enter negative values");
+      return false;
+    }
+
+    data.name = nodeName[i].value;
+    data.value = parseInt(nodeValue[i].value);
     sum += data.value; //get sum of data values
     dataset.push(data); 
               
@@ -32,11 +36,12 @@ function plotGraph(){
   console.log(max);
         
   if (option==='barchart') {
-	barchart(dataset, max);
+    barchart(dataset, max);
+
  }
   else if (option==='piechart') {
     piechart(dataset, max);
-}
+ }
   else if (option==='linechart') {
     linechart(dataset, max);
 }
@@ -63,17 +68,18 @@ function plotGraph(){
 //list.appendChild(document.createTextNode("Item Value:"));
 
     for (var i=0; i<option; i++) {
-      var input_label = document.createElement("INPUT");
-      var input_value = document.createElement("INPUT");            
-      input_label.setAttribute("type", "text");
-      input_label.setAttribute("class", "name");
-      input_value.setAttribute("type", "number");
-      input_value.setAttribute("class", "values");
-      input_value.setAttribute("value", 0);
+      var inputLabel = document.createElement("INPUT"); 
+      var inputValue = document.createElement("INPUT");            
+      inputLabel.setAttribute("type", "text");
+      inputLabel.setAttribute("class", "name");
+      inputValue.setAttribute("type", "number");
+      inputValue.setAttribute("class", "values");
+      inputValue.setAttribute("value", 0);
+      inputValue.setAttribute("min", 0);
       list.appendChild(document.createElement("BR"));
       list.appendChild(document.createTextNode(i+1+'. '));
-      list.appendChild(input_label);
-      list.appendChild(input_value);            
+      list.appendChild(inputLabel);
+      list.appendChild(inputValue);            
   }           		
   }
 
@@ -84,7 +90,7 @@ function findMax(A) {
  }
     			    		
 //Function to plot axis with labels from data set
-function plotaxis() {
+function plotAxis() {
   var canvas = document.getElementById('chart');
   var context = canvas.getContext('2d');
   var startx = 50;
