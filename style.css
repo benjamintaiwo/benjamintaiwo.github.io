@@ -1,7 +1,8 @@
 
         body{         
-          font-family: "Helvetica";
-          background-color: #dfdddd;
+          font-family: Arial;
+          background-color: #67BCDB;
+;
           text-align: center;
         }
         p{
@@ -46,7 +47,7 @@
           height: 485px;
           width: 25%;
           text-align: center;
-          background-color: white;
+          background-color: #0D47A1;
           position: relative;
           box-shadow: 2px 2px 5px #777777;
           margin: 40px 20px;
@@ -54,6 +55,7 @@
           float: left;
           overflow-y:scroll;
           visibility: visible;
+          color: white
 
         }
         #items{
@@ -97,8 +99,7 @@
         select {
     font-size:9pt;
     letter-spacing:0.07em;
-    color:#808080;
-    background:transparent;
+    color:black;
     border: solid 1px #808080;
     padding:3px;
     cursor:pointer;
